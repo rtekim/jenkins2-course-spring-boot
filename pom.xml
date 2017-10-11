@@ -67,6 +67,27 @@
 					<artifactId>replacer</artifactId>
 					<version>1.5.3</version>
 				</plugin>
+				<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<targetJdk>1.8</targetJdk>
+					<linkXref>false</linkXref>
+					<failOnViolation>true</failOnViolation>
+					<failurePriority>1</failurePriority>
+					<rulesets>
+						<ruleset>${pom.basedir}/pmd-rulesets.xml</ruleset>
+					</rulesets>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 
 			</plugins>
 		</pluginManagement>
